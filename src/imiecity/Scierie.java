@@ -18,9 +18,13 @@ public class Scierie extends Lieu {
 
     @Override
     public void process() {
-        int stockArbreActuel = stock.containsKey(Ressource.PLANCHE) ?
-                stock.get(Ressource.PLANCHE) : 0;
-        stock.put(Ressource.PLANCHE, stockArbreActuel +1);
+        int stockArbreActuel = getStock(Ressource.ARBRE) ;
+        if(stockArbreActuel == 0 )
+            return ;
+       
+        int stockPlancheActuel = getStock(Ressource.PLANCHE);
+        stock.put(Ressource.PLANCHE, stockPlancheActuel + 2);
+        stock.put(Ressource.ARBRE, stockArbreActuel - 1);
     }
     
 }

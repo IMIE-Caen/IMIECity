@@ -22,7 +22,7 @@ public class IMIECity {
     public static void main(String[] args) throws Exception {
 
         Lieu sherwood = new Foret("sherwood");
-        Lieu scierie = new Foret("siri");
+        Lieu scierie = new Scierie("siri");
         
             
         Flux flux1 = new Flux(sherwood, scierie, Ressource.ARBRE);

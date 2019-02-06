@@ -24,10 +24,7 @@ public abstract class Lieu {
     }
     
     public int getStock(int ressource){
-        if(! stock.containsKey(ressource) ){
-            return 0;
-        }
-        return stock.get(ressource);
+        return stock.containsKey(ressource) ? stock.get(ressource) : 0 ;
     }
 
     
@@ -38,7 +35,12 @@ public abstract class Lieu {
     
     @Override
     public String toString() {
-        return "Lieu{" + "nom=" + nom + ", stockProduit=" + stock + '}';
+        String stockStr ="" ;
+        for(int ressourceId : stock.keySet()){
+            stockStr += Ressource.nom(ressourceId) + ": " + stock.get(ressourceId);
+        }
+        
+        return "Lieu{" + "nom=" + nom + ", " + stockStr + '}';
     }
   
     

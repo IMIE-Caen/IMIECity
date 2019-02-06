@@ -18,8 +18,7 @@ public class Foret extends Lieu {
 
     @Override
     public void process() {
-        int stockArbreActuel = stock.containsKey(Ressource.ARBRE) ?
-                stock.get(Ressource.ARBRE) : 0;
+        int stockArbreActuel = getStock(Ressource.ARBRE);
         stock.put(Ressource.ARBRE, stockArbreActuel +1);
     }
     
