@@ -16,7 +16,6 @@ public class Foret extends Lieu {
         super(nom);
     }
 
-    @Override
     public void process() {
         int stockArbreActuel = getStock(Ressource.ARBRE);
         stock.put(Ressource.ARBRE, stockArbreActuel +1);

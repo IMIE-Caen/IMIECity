@@ -12,7 +12,7 @@ import java.util.HashMap;
  *
  * @author clement
  */
-public abstract class Lieu extends Processable{
+public abstract class Lieu implements Processable{
    
   public final String nom;
   

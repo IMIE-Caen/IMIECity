@@ -9,7 +9,7 @@ package imiecity;
  *
  * @author clmntlxndr
  */
-public abstract class Processable {
-    public abstract void process();
+public interface Processable {
+    public void process();
     
 }
