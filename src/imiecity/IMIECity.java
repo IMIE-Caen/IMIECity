@@ -25,7 +25,11 @@ public class IMIECity {
         ArrayList<Flux> flux = new ArrayList();
         
         for(int i = 0 ; i < 4 ; i++){
-           lieux.add(Lieu.auHasard()) ;
+           Lieu nouveauLieu = Lieu.auHasard();
+           lieux.add(nouveauLieu) ;
+           ConsoleObserveur ob = new ConsoleObserveur(nouveauLieu);
+           nouveauLieu.addObserveur(ob);
+           
         }
         for(int i = 0 ; i < 3 ; i++){
             
@@ -53,9 +57,6 @@ public class IMIECity {
         while(true){
             for( Processable lieuOuFlux : tab){
                 lieuOuFlux.process();
-            }
-            for( Processable lieuOuFlux : tab){
-                System.out.println(lieuOuFlux);
             }
             
             sleep(2000);

@@ -6,6 +6,7 @@
 
 package imiecity;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -14,10 +15,11 @@ import java.util.HashMap;
  */
 public abstract class Lieu implements Processable{
    
-  public final String nom;
+    public final String nom;
+    public ArrayList<ConsoleObserveur> observeurs = new ArrayList();
   
  
-    protected HashMap<Integer, Integer> stock = new HashMap();
+    private HashMap<Integer, Integer> stock = new HashMap();
 
     public Lieu(String nom) {
         this.nom = nom;
@@ -48,13 +50,27 @@ public abstract class Lieu implements Processable{
 
     void decrementerStock(int ressourceId) {
         int stockActuel = getStock(ressourceId);
-        if(stockActuel > 0)
+        if(stockActuel > 0){
+            notifierLesObserveurs();
             stock.put(ressourceId, stockActuel - 1);
+        }
     }
 
     void incrementerStock(int ressourceId) {
         int stockActuel = getStock(ressourceId);
+        notifierLesObserveurs();
         stock.put(ressourceId, stockActuel + 1);
+    }
+    
+    private void notifierLesObserveurs(){
+        for(ConsoleObserveur ob : observeurs){
+            ob.notifier();
+        }
+        
+    }
+
+    void addObserveur(ConsoleObserveur ob) {
+        observeurs.add(ob);
     }
   
     

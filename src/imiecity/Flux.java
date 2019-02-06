@@ -22,6 +22,8 @@ public class Flux implements Processable {
     }
     
     public void process(){
+        if(origine.getStock(ressourceTransportee) <= 0)
+            return;
         origine.decrementerStock(ressourceTransportee);
         destination.incrementerStock(ressourceTransportee);
     }

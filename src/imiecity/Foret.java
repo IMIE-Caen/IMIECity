@@ -17,8 +17,7 @@ public class Foret extends Lieu {
     }
 
     public void process() {
-        int stockArbreActuel = getStock(Ressource.ARBRE);
-        stock.put(Ressource.ARBRE, stockArbreActuel +1);
+        incrementerStock(Ressource.ARBRE);
     }
     
 }
