@@ -10,7 +10,7 @@ package imiecity;
  *
  * @author clement
  */
-public class Flux {
+public class Flux extends Processable {
     public final Lieu destination;
     public final Lieu origine ;
     public final int ressourceTransportee;

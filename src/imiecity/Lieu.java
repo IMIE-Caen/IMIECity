@@ -12,7 +12,7 @@ import java.util.HashMap;
  *
  * @author clement
  */
-public abstract class Lieu {
+public abstract class Lieu extends Processable{
    
   public final String nom;
   
@@ -27,8 +27,6 @@ public abstract class Lieu {
         return stock.containsKey(ressource) ? stock.get(ressource) : 0 ;
     }
 
-    
-    abstract public void process();
     
     
     

@@ -28,16 +28,17 @@ public class IMIECity {
         Flux flux1 = new Flux(sherwood, scierie, Ressource.ARBRE);
         
         
-        ArrayList<Lieu> lieux = new ArrayList();
-        lieux.add(scierie);
-        lieux.add(sherwood);
+        ArrayList<Processable> tab = new ArrayList();
+        tab.add(scierie);
+        tab.add(sherwood);
+        tab.add(flux1);
+        
                
         while(true){
-            for( int i = 0 ; i < lieux.size() ; i++){
-                lieux.get(i).process();
-                System.out.println(lieux.get(i));
+            for( Processable lieuOuFlux : tab){
+                lieuOuFlux.process();
+                System.out.println(lieuOuFlux);
             }
-            flux1.process();
            
             sleep(2000);
             
