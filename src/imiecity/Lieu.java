@@ -64,7 +64,7 @@ public abstract class Lieu implements Processable{
     
     private void notifierLesObserveurs(){
         for(ConsoleObserveur ob : observeurs){
-            ob.notifier();
+            ob.notifier(this);
         }
         
     }

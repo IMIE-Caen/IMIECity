@@ -11,16 +11,10 @@ package imiecity;
  */
 public class ConsoleObserveur {
 
-    Lieu observable;
-
-    public ConsoleObserveur(Lieu observable) {
-        this.observable = observable;
-    }
     
     
-    
-    void notifier() {
-        System.out.println(observable.toString());
+    void notifier(Lieu observable) {
+        System.out.println(observable);
     }
     
     

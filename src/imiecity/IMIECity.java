@@ -27,8 +27,8 @@ public class IMIECity {
         for(int i = 0 ; i < 4 ; i++){
            Lieu nouveauLieu = Lieu.auHasard();
            lieux.add(nouveauLieu) ;
-           ConsoleObserveur ob = new ConsoleObserveur(nouveauLieu);
-           nouveauLieu.addObserveur(ob);
+
+           nouveauLieu.addObserveur(new ConsoleObserveur());
            
         }
         for(int i = 0 ; i < 3 ; i++){
