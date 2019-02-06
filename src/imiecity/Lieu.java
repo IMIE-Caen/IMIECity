@@ -43,7 +43,7 @@ public abstract class Lieu implements Processable{
             stockStr += Ressource.nom(ressourceId) + ": " + stock.get(ressourceId) + " - ";
         }
         
-        return "Lieu{" + "nom=" + nom + ", " + stockStr + '}';
+        return "Lieu{" + nom +':'+ hashCode() + " -- stock: " + stockStr + '}';
     }
 
     void decrementerStock(int ressourceId) {

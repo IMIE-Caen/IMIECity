@@ -29,11 +29,11 @@ public class IMIECity {
         }
         for(int i = 0 ; i < 3 ; i++){
             
-            int randOrigine = (int)(Math.random() * (lieux.size() + 1));
+            int randOrigine = (int)(Math.random() * (lieux.size()));
             
             int randDest;
             do {
-                randDest = (int)(Math.random() * (lieux.size() + 1));
+                randDest = (int)(Math.random() * (lieux.size()));
             } while(randDest == randOrigine);
             
             Lieu origine= lieux.get(randOrigine);
