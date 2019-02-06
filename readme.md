@@ -9,5 +9,9 @@
 - overrides de méthodes toString / methods abstraites (process)
 - throw Exception sur le main (en attendant de voir)
 - utiliser une interface pour décrire les éléments dans le tableau
+- une presque Factory avec Lieu.auHasard()
 
+## Notes, vulgarisation 
+
+- une factory est une sorte de constructeur qui créée des instances selon nos besoins
 

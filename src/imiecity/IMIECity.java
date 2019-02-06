@@ -21,17 +21,11 @@ public class IMIECity {
      */
     public static void main(String[] args) throws Exception {
 
-        Lieu sherwood = new Foret("sherwood");
-        Lieu scierie = new Scierie("siri");
-        
-            
-        Flux flux1 = new Flux(sherwood, scierie, Ressource.ARBRE);
-        
-        
         ArrayList<Processable> tab = new ArrayList();
-        tab.add(scierie);
-        tab.add(sherwood);
-        tab.add(flux1);
+        
+        for(int i = 0 ; i < 4 ; i++){
+           tab.add(Lieu.auHasard()) ;
+        }
         
                
         while(true){

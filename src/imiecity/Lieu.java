@@ -27,7 +27,12 @@ public abstract class Lieu implements Processable{
         return stock.containsKey(ressource) ? stock.get(ressource) : 0 ;
     }
 
-    
+    public static Lieu auHasard(){
+        if(Math.random() > 0.5){
+           return new Scierie("Scierie"); 
+        }
+        return new Foret("Foret");
+    }
     
     
     
