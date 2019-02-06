@@ -36,7 +36,8 @@ public class IMIECity {
             for( int i = 0 ; i < lieux.size() ; i++){
                 lieux.get(i).process();
                 System.out.println(lieux.get(i));
-            }   
+            }
+            flux1.process();
            
             sleep(2000);
             

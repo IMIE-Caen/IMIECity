@@ -20,6 +20,11 @@ public class Flux {
         this.origine = origine;
         this.ressourceTransportee = ressourceTransportee;
     }
+    
+    public void process(){
+        origine.decrementerStock(ressourceTransportee);
+        destination.incrementerStock(ressourceTransportee);
+    }
 
     @Override
     public String toString() {

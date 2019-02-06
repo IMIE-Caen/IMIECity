@@ -37,10 +37,21 @@ public abstract class Lieu {
     public String toString() {
         String stockStr ="" ;
         for(int ressourceId : stock.keySet()){
-            stockStr += Ressource.nom(ressourceId) + ": " + stock.get(ressourceId);
+            stockStr += Ressource.nom(ressourceId) + ": " + stock.get(ressourceId) + " - ";
         }
         
         return "Lieu{" + "nom=" + nom + ", " + stockStr + '}';
+    }
+
+    void decrementerStock(int ressourceId) {
+        int stockActuel = getStock(ressourceId);
+        if(stockActuel > 0)
+            stock.put(ressourceId, stockActuel - 1);
+    }
+
+    void incrementerStock(int ressourceId) {
+        int stockActuel = getStock(ressourceId);
+        stock.put(ressourceId, stockActuel + 1);
     }
   
     
