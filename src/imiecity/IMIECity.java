@@ -21,13 +21,35 @@ public class IMIECity {
      */
     public static void main(String[] args) throws Exception {
 
-        ArrayList<Processable> tab = new ArrayList();
+        ArrayList<Lieu> lieux = new ArrayList();
+        ArrayList<Flux> flux = new ArrayList();
         
         for(int i = 0 ; i < 4 ; i++){
-           tab.add(Lieu.auHasard()) ;
+           lieux.add(Lieu.auHasard()) ;
+        }
+        for(int i = 0 ; i < 3 ; i++){
+            
+            int randOrigine = (int)(Math.random() * (lieux.size() + 1));
+            
+            int randDest;
+            do {
+                randDest = (int)(Math.random() * (lieux.size() + 1));
+            } while(randDest == randOrigine);
+            
+            Lieu origine= lieux.get(randOrigine);
+            Lieu destination= lieux.get(randDest);
+            
+            // ça aussi c'est moche
+            int ressource = (int)(Math.random() * (2));
+            
+            flux.add(new Flux(origine, destination, ressource));
+            
         }
         
-               
+        ArrayList<Processable> tab = new ArrayList();
+        tab.addAll(lieux);
+        tab.addAll(flux);
+        
         while(true){
             for( Processable lieuOuFlux : tab){
                 lieuOuFlux.process();
