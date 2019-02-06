@@ -37,9 +37,11 @@ public class IMIECity {
         while(true){
             for( Processable lieuOuFlux : tab){
                 lieuOuFlux.process();
+            }
+            for( Processable lieuOuFlux : tab){
                 System.out.println(lieuOuFlux);
             }
-           
+            
             sleep(2000);
             
         }

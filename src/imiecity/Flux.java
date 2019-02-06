@@ -28,7 +28,7 @@ public class Flux implements Processable {
 
     @Override
     public String toString() {
-        return "Flux{" + ressourceTransportee + " de " + origine + " a" + destination +'}';
+        return "Flux{" + Ressource.nom(ressourceTransportee) + " de " + origine + " a" + destination +'}';
     }
     
     
