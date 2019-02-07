@@ -7,6 +7,8 @@ package imiecity;
 
 import static java.lang.Thread.sleep;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 
@@ -18,55 +20,21 @@ import java.util.ArrayList;
 public class IMIECity {
     /**
      * @param args the command line arguments
+     * @throws java.lang.Exception
      */
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception{
+            
+            Monde monde = Monde.getInstance();
 
-        ArrayList<Lieu> lieux = new ArrayList();
-        ArrayList<Flux> flux = new ArrayList();
-        
-        for(int i = 0 ; i < 4 ; i++){
-           Lieu nouveauLieu = Lieu.auHasard();
-           lieux.add(nouveauLieu) ;
+            while(true){
+                for( Processable lieuOuFlux : monde.getProcessables()){
+                    lieuOuFlux.process();
+                }
 
-           nouveauLieu.addObserveur(new ConsoleObserveur());
-           
-        }
-        for(int i = 0 ; i < 3 ; i++){
+               sleep(2000);
             
-            int randOrigine = (int)(Math.random() * (lieux.size()));
-            
-            int randDest;
-            do {
-                randDest = (int)(Math.random() * (lieux.size()));
-            } while(randDest == randOrigine);
-            
-            Lieu origine= lieux.get(randOrigine);
-            Lieu destination= lieux.get(randDest);
-            
-            // ça aussi c'est moche
-            int ressource = (int)(Math.random() * (2));
-            
-            flux.add(new Flux(origine, destination, ressource));
-            
-        }
-        
-        ArrayList<Processable> tab = new ArrayList();
-        tab.addAll(lieux);
-        tab.addAll(flux);
-        
-        while(true){
-            for( Processable lieuOuFlux : tab){
-                lieuOuFlux.process();
             }
             
-            sleep(2000);
-            
-        }
-        
-     //   System.out.println(flux1);     
-       // System.out.println(foret.getStock("arbre"));
-       
-
         
     }
     
