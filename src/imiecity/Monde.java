@@ -1,23 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package imiecity;
 
 import java.util.ArrayList;
-
-/**
- *
- * @author clmntlxndr
- */
-
-
-
-
-
-
-
 
 
 public class Monde {
@@ -37,9 +20,7 @@ public class Monde {
      
     private Monde(){
         
-       
-
-        for(int i = 0 ; i < 4 ; i++){
+       for(int i = 0 ; i < 4 ; i++){
             Lieu nouveauLieu = Lieu.auHasard();
             lieux.add(nouveauLieu) ;
 
@@ -58,7 +39,7 @@ public class Monde {
             Lieu origine= lieux.get(randOrigine);
             Lieu destination= lieux.get(randDest);
 
-            // Ã§a aussi c'est moche
+            // ça aussi c'est moche
             int ressource = (int)(Math.random() * (2));
 
             flux.add(new Flux(origine, destination, ressource));
