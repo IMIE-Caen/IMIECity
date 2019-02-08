@@ -1,29 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package imiecity;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author clmntlxndr
- */
-
-
-
-
-
-
-
-
 
 public class Monde {
     
-    ArrayList<Lieu> lieux = new ArrayList();
-    ArrayList<Flux> flux = new ArrayList();
+    public static ArrayList<Lieu> lieux = new ArrayList();
+    public static ArrayList<Flux> flux = new ArrayList();
     
     private static Monde instance =null; 
      
@@ -37,33 +20,14 @@ public class Monde {
      
     private Monde(){
         
-       
-
-        for(int i = 0 ; i < 4 ; i++){
+       for(int i = 0 ; i < 4 ; i++){
             Lieu nouveauLieu = Lieu.auHasard();
             lieux.add(nouveauLieu) ;
 
             nouveauLieu.addObserveur(new ConsoleObserveur());
 
         }
-        for(int i = 0 ; i < 3 ; i++){
 
-            int randOrigine = (int)(Math.random() * (lieux.size()));
-
-            int randDest;
-            do {
-                randDest = (int)(Math.random() * (lieux.size()));
-            } while(randDest == randOrigine);
-
-            Lieu origine= lieux.get(randOrigine);
-            Lieu destination= lieux.get(randDest);
-
-            // ça aussi c'est moche
-            int ressource = (int)(Math.random() * (2));
-
-            flux.add(new Flux(origine, destination, ressource));
-
-        }
     }
     public ArrayList<Processable> getProcessables(){
         ArrayList<Processable> tab = new ArrayList();
