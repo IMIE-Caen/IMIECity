@@ -30,17 +30,13 @@ public abstract class Lieu implements Processable{
     }
 
     public static Lieu auHasard(){
-        double rand = Math.random();
-        if(rand < 0.25)
-           return new MineFer("Fer");
-       
-        else if( rand < 0.50)
-           return new MineCharbon("Charbon"); 
-           
-       else if( rand < 0.75)
-           return new Scierie("Scierie");
-          
-       return new Foret("Forêt");
+        if(Math.random() > 0.5){
+           return new MineFer("Fer"); 
+        }elseif(Math.random() > 0.5) {
+        	return new MineCharbon("Charbon");
+        }elseif(Math.random() > 0.5) {
+        	return new MineCharbon("Scierie");
+        }return new MineCharbon("Arbre");
     }
     
     @Override
