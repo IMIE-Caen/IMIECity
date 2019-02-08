@@ -16,11 +16,6 @@ public class Champ extends Lieu {
 
     @Override
     public void process() {
-        int stockBleActuel = getStock(Ressource.EPIS) ;
-        if(stockBleActuel == 0 )
-            return ;
-        decrementerStock(Ressource.EPIS);
-        incrementerStock(Ressource.BLE);
         incrementerStock(Ressource.BLE);
 
     }
