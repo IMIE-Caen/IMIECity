@@ -14,6 +14,7 @@ import java.util.HashMap;
  * @author clement
  */
 public abstract class Lieu implements Processable{
+   
     public final String nom;
     public ArrayList<ConsoleObserveur> observeurs = new ArrayList();
   
@@ -29,13 +30,18 @@ public abstract class Lieu implements Processable{
     }
 
     public static Lieu auHasard(){
-        if(Math.random() > 0.5){
-           return new Scierie("Scierie"); 
-        }
-        return new Foret("Foret");
+        double rand = Math.random();
+        if(rand < 0.25)
+           return new MineFer("Fer");
+       
+        else if( rand < 0.50)
+           return new MineCharbon("Charbon"); 
+           
+       else if( rand < 0.75)
+           return new Scierie("Scierie");
+          
+       return new Foret("Forêt");
     }
-    
-    
     
     @Override
     public String toString() {

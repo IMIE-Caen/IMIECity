@@ -10,15 +10,10 @@ package imiecity;
  *
  * @author clement
  */
-
-
-
 public class Flux implements Processable {
     public final Lieu destination;
     public final Lieu origine ;
     public final int ressourceTransportee;
-    
-   
 
     public Flux(Lieu origine, Lieu destination, int ressourceTransportee) {
         this.destination = destination;
