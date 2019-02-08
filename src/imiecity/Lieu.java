@@ -30,7 +30,7 @@ public abstract class Lieu implements Processable{
     }
 
     public static Lieu auHasard(){
-        float rand = Math.random();
+        double rand = Math.random();
         if(rand < 0.25)
            return new MineFer("Fer");
        
