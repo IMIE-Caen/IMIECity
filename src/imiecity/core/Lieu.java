@@ -4,19 +4,21 @@
  * and open the template in the editor.
  */
 
-package imiecity;
+package imiecity.core;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
 
 /**
  *
  * @author clement
  */
-public abstract class Lieu implements Processable{
+public abstract class Lieu extends Observable implements Processable{
    
     public final String nom;
-    public ArrayList<ConsoleObserveur> observeurs = new ArrayList();
+    public ArrayList<Observer> observeurs = new ArrayList();
   
  
     private HashMap<Integer, Integer> stock = new HashMap();
@@ -32,10 +34,10 @@ public abstract class Lieu implements Processable{
     public static Lieu auHasard(){
         double rand = Math.random();
         if(rand < 0.25)
-           return new MineFer("Fer");
+           return new MineFer("Mine de Fer");
        
         else if( rand < 0.50)
-           return new MineCharbon("Charbon"); 
+           return new MineCharbon("Mine de Charbon"); 
            
        else if( rand < 0.75)
            return new Scierie("Scierie");
@@ -56,29 +58,20 @@ public abstract class Lieu implements Processable{
     void decrementerStock(int ressourceId) {
         int stockActuel = getStock(ressourceId);
         if(stockActuel > 0){
-            notifierLesObserveurs();
+            setChanged();
+            notifyObservers();
             stock.put(ressourceId, stockActuel - 1);
         }
     }
 
     void incrementerStock(int ressourceId) {
         int stockActuel = getStock(ressourceId);
-        notifierLesObserveurs();
+        setChanged();
+        notifyObservers();
         stock.put(ressourceId, stockActuel + 1);
     }
     
-    private void notifierLesObserveurs(){
-        for(ConsoleObserveur ob : observeurs){
-            ob.notifier(this);
-        }
-        
-    }
 
-    void addObserveur(ConsoleObserveur ob) {
-        observeurs.add(ob);
-    }
-  
-    
     
     
 }

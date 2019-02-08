@@ -1,4 +1,4 @@
-package imiecity;
+package imiecity.core;
 
 import java.util.Scanner;
 import java.util.ArrayList;

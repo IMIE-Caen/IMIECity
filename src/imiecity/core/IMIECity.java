@@ -1,4 +1,4 @@
-package imiecity;
+package imiecity.core;
 
 import static java.lang.Thread.sleep;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package imiecity;
+package imiecity.core;
 
 public class Acierie extends Lieu{
 

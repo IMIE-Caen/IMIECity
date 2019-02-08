@@ -3,13 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package imiecity;
+package imiecity.core;
 
 /**
  *
  * @author clmntlxndr
  */
-public interface Processable {
-    public void process();
+public class MineFer extends Lieu {
+
+    public MineFer(String nom) {
+        super(nom);
+    }
+
+    public void process() {
+        incrementerStock(Ressource.FER);
+    }
     
 }

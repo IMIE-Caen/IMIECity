@@ -1,4 +1,4 @@
-package imiecity;
+package imiecity.core;
 
 import java.util.ArrayList;
 
@@ -24,7 +24,7 @@ public class Monde {
             Lieu nouveauLieu = Lieu.auHasard();
             lieux.add(nouveauLieu) ;
 
-            nouveauLieu.addObserveur(new ConsoleObserveur());
+            // nouveauLieu.addObserver(new ConsoleObserveur());
 
         }
 

@@ -3,20 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package imiecity;
+
+package imiecity.core;
 
 /**
  *
- * @author clmntlxndr
+ * @author clement
  */
-public class MineFer extends Lieu {
+public class Foret extends Lieu {
 
-    public MineFer(String nom) {
+    public Foret(String nom) {
         super(nom);
     }
 
     public void process() {
-        incrementerStock(Ressource.FER);
+        incrementerStock(Ressource.ARBRE);
     }
     
 }

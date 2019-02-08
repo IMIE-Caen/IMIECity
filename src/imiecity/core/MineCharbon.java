@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package imiecity;
+package imiecity.core;
 
 /**
  *
- * @author doskyft
+ * @author clmntlxndr
  */
-public class Champ extends Lieu {
-    public Champ(String nom) {
+public class MineCharbon extends Lieu {
+
+    public MineCharbon(String nom) {
         super(nom);
     }
 
-    @Override
     public void process() {
-        incrementerStock(Ressource.BLE);
-
+        incrementerStock(Ressource.CHARBON);
     }
+    
 }

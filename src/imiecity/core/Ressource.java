@@ -1,5 +1,5 @@
 
-package imiecity;
+package imiecity.core;
 
 public class Ressource {
     public final static int ARBRE=0;
