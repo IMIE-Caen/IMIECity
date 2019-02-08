@@ -1,3 +1,5 @@
+![Logo](https://github.com/IMIE-Caen/IMIECity/raw/master/logo.png)
+
 ## Points abordés
 
 - Interface
