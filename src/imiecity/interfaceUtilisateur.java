@@ -2,7 +2,6 @@ package imiecity;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import static jdk.nashorn.internal.objects.NativeMap.size;
 
 public class interfaceUtilisateur {
     
