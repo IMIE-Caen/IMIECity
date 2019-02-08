@@ -27,9 +27,16 @@ public class IMIECity {
             Monde monde = Monde.getInstance();
 
             while(true){
+                interfaceUtilisateur user = new interfaceUtilisateur();
+                user.quit = false;
+                if(!user.quit){
+                    user.menu();
+                }
+                System.out.println("------------------------------------------");
                 for( Processable lieuOuFlux : monde.getProcessables()){
                     lieuOuFlux.process();
                 }
+                System.out.println("------------------------------------------");
 
                sleep(2000);
             
